@@ -3,6 +3,6 @@
 export const AppConfig = {
   site_name: 'ショコラ',
   title: 'ショコラ',
-  description: 'ショコラは日本と韓国の関連なサイトです',
+  description: '',
   locale: 'ja',
 };

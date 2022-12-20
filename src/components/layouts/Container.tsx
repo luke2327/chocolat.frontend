@@ -1,11 +1,7 @@
-import styled from 'styled-components';
+import type { ReactNode } from 'react';
 
-const Container = styled.div`
-  position: relative;
-  max-width: 130em;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 2rem;
-`;
+const Container = ({ children }: { children: ReactNode }) => {
+  return <div className="cover p-2">{children}</div>;
+};
 
 export default Container;
