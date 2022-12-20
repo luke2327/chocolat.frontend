@@ -8,7 +8,7 @@ type IMainProps = {
   children: ReactNode;
 };
 
-const Main = (props: IMainProps) => (
+export const Main = (props: IMainProps) => (
   <div className="w-full px-1 text-gray-700 antialiased">
     {props.meta}
 
@@ -58,5 +58,3 @@ const Main = (props: IMainProps) => (
     </div>
   </div>
 );
-
-export { Main };
