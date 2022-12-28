@@ -56,7 +56,15 @@
         "@typescript-eslint/no-use-before-define": "off",
         "unused-imports/no-unused-vars": "warn",
         "@typescript-eslint/no-shadow": "off",
-        "tailwindcss/migration-from-tailwind-2": "off"
+        "tailwindcss/migration-from-tailwind-2": "off",
+        "import/no-extraneous-dependencies": [
+          "off",
+          {
+            "devDependencies": false,
+            "optionalDependencies": false,
+            "peerDependencies": false
+          }
+        ]
         // "unused-imports/no-unused-vars": [
         //   "error",
         //   { "argsIgnorePattern": "^_" }
