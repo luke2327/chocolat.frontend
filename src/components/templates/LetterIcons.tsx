@@ -1,12 +1,24 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 
+import { letterFrame } from '@/constants/temp';
+
 const LetterIcons: React.FC = () => {
+  const [isShowing, setIsShowing] = useState(true);
+  const selectFrame = async () => {
+    setIsShowing(!isShowing);
+  };
+
   return (
-    <Frame className="cursor-pointer border-solid border-slate-300">
-      <Img
-        src="https://static.vecteezy.com/system/resources/previews/003/758/254/original/black-and-white-thanksgiving-card-im-thankful-for-line-vertical-letter-template-with-cute-turkey-basket-with-apples-fruit-harvest-autumn-outline-holiday-frame-design-for-kids-vector.jpg"
-        alt="frame"
-      />
+    <Frame
+      onClick={selectFrame}
+      className="
+        transform cursor-pointer items-center rounded-lg border-solid
+        border-slate-300 bg-black bg-opacity-20 p-1 text-sm font-medium
+        text-white transition hover:scale-105 hover:bg-opacity-30
+        focus:outline-none active:bg-opacity-40"
+    >
+      <Img src={letterFrame} alt="frame" />
     </Frame>
   );
 };
