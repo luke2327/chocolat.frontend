@@ -52,12 +52,23 @@
         "simple-import-sort/imports": "error", // Import configuration for `eslint-plugin-simple-import-sort`
         "simple-import-sort/exports": "error", // Export configuration for `eslint-plugin-simple-import-sort`
         "@typescript-eslint/no-unused-vars": "off",
-        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-imports": "off",
         "@typescript-eslint/no-use-before-define": "off",
-        "unused-imports/no-unused-vars": [
-          "error",
-          { "argsIgnorePattern": "^_" }
+        "unused-imports/no-unused-vars": "warn",
+        "@typescript-eslint/no-shadow": "off",
+        "tailwindcss/migration-from-tailwind-2": "off",
+        "import/no-extraneous-dependencies": [
+          "off",
+          {
+            "devDependencies": false,
+            "optionalDependencies": false,
+            "peerDependencies": false
+          }
         ]
+        // "unused-imports/no-unused-vars": [
+        //   "error",
+        //   { "argsIgnorePattern": "^_" }
+        // ]
       }
     },
     // Configuration for testing

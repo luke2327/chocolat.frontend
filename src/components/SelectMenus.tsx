@@ -11,8 +11,13 @@ const people = [
   },
   {
     id: 2,
-    name: '韓国語',
+    name: '한국어',
     avatar: 'https://t1.daumcdn.net/cfile/tistory/216A104955CDB88A1B',
+  },
+  {
+    id: 2,
+    name: 'English',
+    avatar: 'https://www.emojiall.com/en/header-svg/%F0%9F%8C%8D.svg',
   },
 ] as const;
 

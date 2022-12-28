@@ -23,14 +23,20 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.7",
+    "@headlessui/tailwindcss": "^0.1.2",
     "@heroicons/react": "^2.0.13",
     "@types/styled-components": "^5.1.26",
+    "babel-plugin-styled-components": "^2.0.7",
+    "flowbite": "^1.5.5",
+    "flowbite-react": "^0.3.7",
     "next": "^13.0.6",
     "next-seo": "^5.15.0",
     "next-sitemap": "^3.1.32",
     "nextjs-color-mode": "^1.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-query": "^3.39.2",
+    "react-use": "^17.4.0",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
@@ -51,6 +57,7 @@
     "@typescript-eslint/eslint-plugin": "^5.46.1",
     "@typescript-eslint/parser": "^5.46.1",
     "autoprefixer": "^10.4.13",
+    "axios": "^1.2.1",
     "commitizen": "^4.2.6",
     "cross-env": "^7.0.3",
     "cssnano": "^5.1.14",

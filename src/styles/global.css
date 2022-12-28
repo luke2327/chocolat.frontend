@@ -35,12 +35,10 @@ a:hover {
 }
 
 :lang(ko) {font-family:'dongdong', sans-serif}
-:lang(ja) {font-family: 'KaiseiDecol', sans-serif}
+:lang(ja) {font-family: 'Kokoro', sans-serif}
 
-html, body, .cover {
+html, body {
   width: 100vw;
   height: 100vh;
-}
-.cover {
   background: linear-gradient(180deg, rgba(255,229,217,1) 42%, rgba(216,226,220,1) 100%);
 }
