@@ -3,6 +3,6 @@
 export const AppConfig = {
   site_name: 'ショコラ',
   title: 'ショコラ',
-  description: '',
+  description: '大切な相手に手紙を書こう:)',
   locale: 'ja',
 };
