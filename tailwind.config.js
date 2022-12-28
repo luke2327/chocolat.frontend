@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
@@ -41,5 +42,9 @@ module.exports = {
       },
     },
   },
-  // plugins: [require('flowbite/plugin')],
+  plugins: [
+    require('flowbite/plugin'),
+    require('@headlessui/tailwindcss'),
+    require('@headlessui/tailwindcss')({ prefix: 'ui' }),
+  ],
 };
