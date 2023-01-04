@@ -4,7 +4,11 @@ import styled from 'styled-components';
 import { flower } from '@/constants/flower';
 import { getRandomInt } from '@/utils/common';
 
-export const RandomFlower = () => {
+type RandomFlowerProps = {
+  onClick: () => void;
+};
+
+export const RandomFlower: React.FC<RandomFlowerProps> = ({ onClick }) => {
   const [flowerSrc, setFlowerSrc] = useState<string>('');
 
   useEffect(() => {
@@ -15,7 +19,11 @@ export const RandomFlower = () => {
   }, []);
   return (
     <div>
-      <FlowerIcon src={flowerSrc} alt="Main menu flower images." />
+      <FlowerIcon
+        onClick={onClick}
+        src={flowerSrc}
+        alt="Main menu flower images."
+      />
     </div>
   );
 };
