@@ -17,4 +17,19 @@ module.exports = withBundleAnalyzer({
   compiler: {
     styledComponents: true,
   },
+  i18n: {
+    locales: ['ja', 'ko'],
+    defaultLocale: 'ja',
+
+    domains: [
+      {
+        domain: 'chocolat.jp',
+        defaultLocale: 'ja',
+      },
+      {
+        domain: 'chocolat.kr',
+        defaultLocale: 'ko',
+      },
+    ],
+  },
 });
