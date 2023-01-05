@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
+import { useRecoilValue } from 'recoil';
 
-import { AppConfig } from '@/utils/AppConfig';
+import { configState } from '@/stores/common';
 
 type IMetaProps = {
   title: string;
@@ -12,6 +13,7 @@ type IMetaProps = {
 
 const Meta = (props: IMetaProps) => {
   const router = useRouter();
+  const config = useRecoilValue(configState);
 
   return (
     <>
@@ -36,8 +38,8 @@ const Meta = (props: IMetaProps) => {
           title: props.title,
           description: props.description,
           url: props.canonical,
-          locale: AppConfig.locale,
-          site_name: AppConfig.site_name,
+          site_name: props.title,
+          locale: config.currentLocale,
         }}
       />
     </>
