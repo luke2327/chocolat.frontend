@@ -10,6 +10,8 @@ import type {
 const defaultValueLetter: LetterState = {
   letterId: null,
   letters: '',
+  selectedKeywordId: 'letter.keyword1',
+  selectedKeywordName: '',
 };
 
 export const letterState = atom({

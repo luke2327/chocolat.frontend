@@ -1,6 +1,8 @@
 type LetterState = {
   letterId: null | number;
   letters: string;
+  selectedKeywordId: string;
+  selectedKeywordName: string;
 };
 type CommonState = {
   step: number;
