@@ -2,14 +2,16 @@ import type { ReactNode } from 'react';
 import { useRecoilState } from 'recoil';
 
 import Container from '@/components/layouts/Container';
+import { AppConfig } from '@/constants/AppConfig';
 import { modalState } from '@/stores/common';
-import { AppConfig } from '@/utils/AppConfig';
 
 import { RandomFlower } from '../RandomFlower';
 
 type IMainProps = {
   meta: ReactNode;
   children: ReactNode;
+  title: string;
+  description: string;
 };
 
 export const Main = (props: IMainProps) => {
@@ -31,12 +33,14 @@ export const Main = (props: IMainProps) => {
             <div className="py-2">
               <div className="flex items-center justify-between">
                 <div className="text-3xl font-bold text-gray-900">
-                  {AppConfig.title}
+                  {props.title}
                 </div>
-                <RandomFlower onClick={openRightSidePannel} />
+                <div className="cursor-pointer">
+                  <RandomFlower onClick={openRightSidePannel} />
+                </div>
               </div>
 
-              <div className="m-0 text-sm">{AppConfig.description}</div>
+              <div className="m-0 text-sm">{props.description}</div>
             </div>
           </div>
 
