@@ -1,19 +1,20 @@
 import '../styles/global.css';
+import '../i18n/i18n';
 
+import i18next from 'i18next';
 import type { AppProps } from 'next/app';
-import React from 'react';
-import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools';
+import React, { useEffect } from 'react';
+import { RecoilRoot } from 'recoil';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  const [queryClient] = React.useState(() => new QueryClient());
-
+  useEffect(() => {
+    i18next.on('languageChanged', (lng) => {
+      document.documentElement.setAttribute('lang', lng);
+    });
+  });
   return (
-    <QueryClientProvider client={queryClient}>
-      <Hydrate state={pageProps.dehydratedState}>
-        <Component {...pageProps} />
-      </Hydrate>
-      <ReactQueryDevtools />
-    </QueryClientProvider>
+    <RecoilRoot>
+      <Component {...pageProps} />
+    </RecoilRoot>
   );
 }
