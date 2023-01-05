@@ -1,21 +1,36 @@
 import { Listbox, Transition } from '@headlessui/react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 import { Fragment } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useRecoilState } from 'recoil';
 
-import { keyword } from '@/constants/keyword';
+import type { Keyword } from '@/constants/letter.keyword';
+import { keyword } from '@/constants/letter.keyword';
+import { letterState } from '@/stores/common';
 
-type Props = {
-  onChange: (value: any) => void;
-  value: any;
-};
+export default function SelectBox() {
+  const { t } = useTranslation();
+  const onChange = (value: Keyword) => {
+    setLetter({
+      ...letter,
+      selectedKeywordName: value,
+    });
+  };
 
-export default function SelectBox({ onChange, value }: Props) {
+  const [letter, setLetter] = useRecoilState(letterState);
+
   return (
     <div className="w-auto">
-      <Listbox value={value} onChange={onChange}>
+      <Listbox value={letter.selectedKeywordName} onChange={onChange}>
         <div className="relative mt-1">
-          <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left opacity-70 shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
-            <span className="block truncate">{value}</span>
+          <Listbox.Button
+            className="
+              relative w-full cursor-default rounded-lg bg-white py-2 pl-3
+              pr-10 text-left opacity-70 shadow-md focus:outline-none focus-visible:border-indigo-500
+              focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75
+              focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
+          >
+            <span className="block truncate">{letter.selectedKeywordName}</span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
               <ChevronUpDownIcon
                 className="h-5 w-5 text-gray-400"
@@ -29,7 +44,11 @@ export default function SelectBox({ onChange, value }: Props) {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+            <Listbox.Options
+              className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md
+              bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5
+                focus:outline-none sm:text-sm"
+            >
               {keyword.map((word, idx) => (
                 <Listbox.Option
                   key={idx}
@@ -38,7 +57,7 @@ export default function SelectBox({ onChange, value }: Props) {
                       active ? 'bg-amber-100 text-amber-900' : 'text-gray-900'
                     }`
                   }
-                  value={word}
+                  value={t(word)}
                 >
                   {({ selected }) => (
                     <>
@@ -47,7 +66,7 @@ export default function SelectBox({ onChange, value }: Props) {
                           selected ? 'font-medium' : 'font-normal'
                         }`}
                       >
-                        {word}
+                        {t(word)}
                       </span>
                       {selected ? (
                         <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">

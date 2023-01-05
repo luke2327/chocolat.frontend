@@ -1,23 +1,26 @@
 import { Dialog, Transition } from '@headlessui/react';
-import { useRouter } from 'next/router';
 import { Fragment } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useRecoilState } from 'recoil';
 
-import { useLocale } from '@/hooks/useLocale';
-import { defaultValueModal, modalState } from '@/stores/common';
+import i18n from '@/i18n/i18n';
+import { configState, defaultValueModal, modalState } from '@/stores/common';
 
 export default function RightSidePannelModal() {
-  const { t } = useLocale();
-  const router = useRouter();
+  const { t } = useTranslation();
   const [modal, setModal] = useRecoilState(modalState);
+  const [config, setConfig] = useRecoilState(configState);
 
   function closeModal() {
     setModal(defaultValueModal);
   }
 
   function changeLanguage(locale: 'ja' | 'ko') {
-    console.log(locale);
-    router.push('/', '/', { locale });
+    i18n.changeLanguage(locale);
+    setConfig({
+      ...config,
+      currentLocale: locale,
+    });
   }
 
   return (
@@ -49,19 +52,19 @@ export default function RightSidePannelModal() {
               >
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white bg-opacity-90 p-6 text-left align-middle shadow-xl transition-all">
                   <div className="mt-2 flex items-center justify-between">
-                    <p className="text-sm text-gray-500">{t.language}</p>
+                    <p className="text-sm text-gray-500">{t('language')}</p>
                     <div className="flex">
                       <p
                         onClick={() => changeLanguage('ja')}
-                        className="mr-2 w-8 cursor-pointer rounded-md bg-gray-300 bg-opacity-50 p-1 text-center text-xs hover:bg-gray-400"
+                        className="mr-2 w-16 cursor-pointer rounded-md bg-gray-300 bg-opacity-50 p-1 text-center text-xs hover:bg-gray-400"
                       >
-                        JP
+                        {t('japanese')}
                       </p>
                       <p
                         onClick={() => changeLanguage('ko')}
-                        className="w-8 cursor-pointer rounded-md bg-gray-300 bg-opacity-50 p-1 text-center text-xs hover:bg-gray-400"
+                        className="w-16 cursor-pointer rounded-md bg-gray-300 bg-opacity-50 p-1 text-center text-xs hover:bg-gray-400"
                       >
-                        KR
+                        {t('korean')}
                       </p>
                     </div>
                   </div>
@@ -69,10 +72,10 @@ export default function RightSidePannelModal() {
                   <div className="mt-4 flex justify-end">
                     <button
                       type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-red-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-200 focus-visible:ring-offset-2"
+                      className="inline-flex justify-center rounded-md border border-transparent bg-red-100 px-4 py-1 text-sm font-medium text-blue-900 hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-200 focus-visible:ring-offset-2"
                       onClick={closeModal}
                     >
-                      Close
+                      {t('common.close')}
                     </button>
                   </div>
                 </Dialog.Panel>
