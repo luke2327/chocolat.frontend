@@ -1,8 +1,8 @@
 import type { DocumentContext } from 'next/document';
-import Document, { Head, Html, Main, NextScript } from 'next/document';
+import Document, { Head, Html, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
-import { AppConfig } from '@/utils/AppConfig';
+import { defaultLanguage } from '@/constants/AppConfig';
 
 // Need to create a custom _document because i18n support is not compatible with `next export`.
 class MyDocument extends Document {
@@ -35,7 +35,7 @@ class MyDocument extends Document {
   // eslint-disable-next-line class-methods-use-this
   render() {
     return (
-      <Html lang={AppConfig.locale}>
+      <Html lang={defaultLanguage}>
         <Head>
           <link
             href="https://fonts.googleapis.com/earlyaccess/kokoro.css"
@@ -43,7 +43,6 @@ class MyDocument extends Document {
           ></link>
         </Head>
         <body>
-          <Main />
           <NextScript />
         </body>
       </Html>
