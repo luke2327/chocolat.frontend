@@ -21,6 +21,21 @@ export const letterState = atom({
 
 export const defaultValueCommon: CommonState = {
   step: 0,
+  totalStep: 3,
+  stepList: [
+    {
+      label: 'step.selectDesign',
+      labelEn: 'step.selectDesignEn',
+    },
+    {
+      label: 'step.writeMessage',
+      labelEn: 'step.writeMessageEn',
+    },
+    {
+      label: 'step.customize',
+      labelEn: 'step.customizeEn',
+    },
+  ],
   letterFrameImgURI: '',
 };
 
