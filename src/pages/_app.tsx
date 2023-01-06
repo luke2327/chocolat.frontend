@@ -11,6 +11,12 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     i18next.on('languageChanged', (lng) => {
       document.documentElement.setAttribute('lang', lng);
     });
+
+    const lng = localStorage.getItem('lng');
+
+    if (lng) {
+      document.documentElement.setAttribute('lang', lng);
+    }
   });
   return (
     <RecoilRoot>

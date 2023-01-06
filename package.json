@@ -1,6 +1,6 @@
 {
   "name": "chocolat.frontend",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "scripts": {
     "dev": "next dev -p 7777",
     "build": "next build",
@@ -19,7 +19,8 @@
     "e2e": "start-server-and-test dev http://localhost:3000 cypress",
     "e2e:headless": "start-server-and-test dev http://localhost:3000 cypress:headless",
     "prepare": "husky install",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.7",
@@ -119,5 +120,9 @@
       "@semantic-release/github"
     ]
   },
-  "author": "Ixartz (https://github.com/ixartz)"
+  "author": "Ixartz (https://github.com/ixartz)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luke2327/chocolat.frontend.git"
+  }
 }

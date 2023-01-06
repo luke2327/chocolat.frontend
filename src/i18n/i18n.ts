@@ -9,7 +9,7 @@ import { defaultLanguage, languages } from '@/constants/AppConfig';
 
 import type { Language } from './languages/ja';
 
-const locales: Record<
+export const locales: Record<
   SupportedLanguage,
   Record<'translations', Language>
 > = Object.assign(

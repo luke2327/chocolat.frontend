@@ -1,12 +1,8 @@
 import LetterIcons from './templates/LetterIcons';
 
-type LetterListProps = {
-  className?: string;
-};
-
-const LetterList = ({ className }: LetterListProps) => (
-  <div className={className}>
-    {Array(4)
+const LetterList = () => (
+  <div className={'mt-4'}>
+    {Array(3)
       .fill(undefined)
       .map((_v: undefined, idx) => (
         <div key={idx} className="mb-2 flex justify-around space-x-2">

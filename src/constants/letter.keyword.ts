@@ -1,4 +1,6 @@
-export const keyword = [
+import type { LanguageKey } from '@/i18n/languages/ja';
+
+export const keyword: LanguageKey[] = [
   'letter.keyword1',
   'letter.keyword2',
   'letter.keyword3',

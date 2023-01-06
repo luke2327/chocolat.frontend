@@ -22,23 +22,66 @@ a:hover {
 
 @font-face {
   font-family: 'dongdong';
-  src: url('https://maria2000.s3.ap-northeast-1.amazonaws.com/dongdong.ttf') format('ttf');
+  src: url('https://maria2000.s3.ap-northeast-1.amazonaws.com/dongdong.ttf');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'KaiseiDecol';
-  src: url('https://maria2000.s3.ap-northeast-1.amazonaws.com/KaiseiDecol-Regular.ttf') format('ttf');
+  src: url('https://maria2000.s3.ap-northeast-1.amazonaws.com/KaiseiDecol-Regular.ttf');
   font-weight: normal;
   font-style: normal;
 }
 
-:lang(ko) {font-family:'dongdong', sans-serif}
-:lang(ja) {font-family: 'Kokoro', sans-serif}
+@font-face {
+  font-family: 'Yosugara';
+  src: url('https://maria2000.s3.ap-northeast-1.amazonaws.com/yosugara1.1.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HuiFont109';
+  src: url('https://maria2000.s3.ap-northeast-1.amazonaws.com/HuiFont109.ttf');
+}
+
+@font-face {
+  font-family: 'HuiFont';
+  src: url('https://maria2000.s3.ap-northeast-1.amazonaws.com/HuiFont29.ttf');
+}
+
+@font-face {
+  font-family: 'FUTENE';
+  src: url('https://maria2000.s3.ap-northeast-1.amazonaws.com/FUTENE.ttf');
+}
+@font-face {
+  font-family: '001Shirokuma';
+  src: url('https://maria2000.s3.ap-northeast-1.amazonaws.com/001Shirokuma-Regular.otf') format('otf');
+}
+
+/** english */
+@font-face {
+  font-family: 'YeonSung';
+  src: url('https://maria2000.s3.ap-northeast-1.amazonaws.com/YeonSung-Regular.ttf');
+}
+
+
+:lang(ko) { font-family:'dongdong', sans-serif }
+:lang(ja) { font-family: 'HuiFont', sans-serif }
 
 html, body {
   width: 100vw;
   height: 100vh;
   background: linear-gradient(180deg, rgba(255,229,217,1) 42%, rgba(216,226,220,1) 100%);
+}
+
+.en-font {
+  font-family: 'YeonSung', sans-serif
+}
+.ja-font {
+  font-family: 'HuiFont', sans-serif
+}
+.ko-font {
+  font-family: 'Cute Font', sans-serif
 }

@@ -1,5 +1,6 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 
@@ -8,6 +9,7 @@ import { commonState, modalState } from '@/stores/common';
 export default function LetterFrameSelectModal() {
   const [common, setCommon] = useRecoilState(commonState);
   const [modal, setModal] = useRecoilState(modalState);
+  const { t } = useTranslation();
 
   function closeModal() {
     setModal({
@@ -73,7 +75,7 @@ export default function LetterFrameSelectModal() {
                       className="inline-flex justify-center rounded-md border border-transparent bg-red-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-200 focus-visible:ring-offset-2"
                       onClick={closeModal}
                     >
-                      Close
+                      {t('common.close')}
                     </button>
                   </div>
                 </Dialog.Panel>
