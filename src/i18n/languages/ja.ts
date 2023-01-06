@@ -5,15 +5,28 @@ const ja = {
   japanese: '日本語',
   korean: '한국어',
 
-  'letter.keyword1': 'タンジョウビ',
+  // 'letter.keyword1': 'タンジョウビ',
+  // 'letter.keyword2': 'クリスマス',
+  // 'letter.keyword3': 'バレンタインデー',
+  // 'letter.keyword4': 'ホワイトデー',
+  // 'letter.keyword5': 'キネンビ',
+  'letter.keyword1': '誕生日',
   'letter.keyword2': 'クリスマス',
   'letter.keyword3': 'バレンタインデー',
   'letter.keyword4': 'ホワイトデー',
-  'letter.keyword5': 'キネンビ',
+  'letter.keyword5': '記念日',
+
+  'step.selectDesign': 'デザインを選ぶ',
+  'step.selectDesignEn': 'Design',
+  'step.writeMessage': 'メッセージを書く',
+  'step.writeMessageEn': 'Message',
+  'step.customize': 'カスタマイズ',
+  'step.customizeEn': 'Customize',
 
   'common.close': '閉じる',
 };
 
-export type Language = Record<keyof typeof ja, Readonly<string>>;
+export type LanguageKey = Readonly<keyof typeof ja>;
+export type Language = Record<LanguageKey, Readonly<string>>;
 
 export default ja;

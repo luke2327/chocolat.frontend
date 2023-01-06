@@ -14,6 +14,13 @@ const ko: Language = {
   'letter.keyword5': '기념일',
 
   'common.close': '닫기',
+
+  'step.selectDesign': '디자인 선택',
+  'step.selectDesignEn': 'Design',
+  'step.writeMessage': '메세지',
+  'step.writeMessageEn': 'Message',
+  'step.customize': '커스터마이즈',
+  'step.customizeEn': 'Customize',
 };
 
 export default ko;
