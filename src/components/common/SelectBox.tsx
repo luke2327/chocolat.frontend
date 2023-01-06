@@ -20,12 +20,12 @@ export default function SelectBox() {
   const [letter, setLetter] = useRecoilState(letterState);
 
   return (
-    <div className="w-auto">
+    <div className="mt-3 w-auto">
       <Listbox value={letter.selectedKeywordName} onChange={onChange}>
         <div className="relative mt-1">
           <Listbox.Button
             className="
-              relative w-full cursor-default rounded-lg bg-white py-2 pl-3
+              relative w-48 cursor-default rounded-lg bg-white py-2 pl-3
               pr-10 text-left opacity-70 shadow-md focus:outline-none focus-visible:border-indigo-500
               focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75
               focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
@@ -45,9 +45,9 @@ export default function SelectBox() {
             leaveTo="opacity-0"
           >
             <Listbox.Options
-              className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md
-              bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5
-                focus:outline-none sm:text-sm"
+              className="absolute z-10 mt-1 max-h-60 w-48 overflow-auto
+              rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black
+                ring-opacity-5 focus:outline-none sm:text-sm"
             >
               {keyword.map((word, idx) => (
                 <Listbox.Option

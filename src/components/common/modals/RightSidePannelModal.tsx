@@ -56,13 +56,13 @@ export default function RightSidePannelModal() {
                     <div className="flex">
                       <p
                         onClick={() => changeLanguage('ja')}
-                        className="mr-2 w-16 cursor-pointer rounded-md bg-gray-300 bg-opacity-50 p-1 text-center text-xs hover:bg-gray-400"
+                        className="ja-font mr-2 w-16 cursor-pointer rounded-md bg-gray-300 bg-opacity-50 p-1 text-center text-xs hover:bg-gray-400"
                       >
                         {t('japanese')}
                       </p>
                       <p
                         onClick={() => changeLanguage('ko')}
-                        className="w-16 cursor-pointer rounded-md bg-gray-300 bg-opacity-50 p-1 text-center text-xs hover:bg-gray-400"
+                        className="ko-font w-16 cursor-pointer rounded-md bg-gray-300 bg-opacity-50 p-1 text-center text-xs hover:bg-gray-400"
                       >
                         {t('korean')}
                       </p>
