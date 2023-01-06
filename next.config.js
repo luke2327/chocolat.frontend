@@ -17,4 +17,7 @@ module.exports = withBundleAnalyzer({
   compiler: {
     styledComponents: true,
   },
+  images: {
+    unoptimized: true,
+  },
 });
