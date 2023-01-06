@@ -1,5 +1,6 @@
+/* eslint-disable @next/next/google-font-display */
 import type { DocumentContext } from 'next/document';
-import Document, { Head, Html, NextScript } from 'next/document';
+import Document, { Head, Html, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
 import { defaultLanguage } from '@/constants/AppConfig';
@@ -41,8 +42,25 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/earlyaccess/kokoro.css"
             rel="stylesheet"
           ></link>
+          <link
+            href="https://fonts.googleapis.com/css?family=Hi+Melody:400"
+            rel="stylesheet"
+          ></link>
+          <link
+            href="https://fonts.googleapis.com/css?family=Jua:400"
+            rel="stylesheet"
+          ></link>
+          <link
+            href="https://fonts.googleapis.com/css?family=Cute+Font:400"
+            rel="stylesheet"
+          ></link>
+          <link
+            href="https://fonts.googleapis.com/earlyaccess/nicomoji.css"
+            rel="stylesheet"
+          ></link>
         </Head>
         <body>
+          <Main />
           <NextScript />
         </body>
       </Html>
