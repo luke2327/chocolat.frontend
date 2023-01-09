@@ -7,3 +7,8 @@
 export function getRandomInt(max: number) {
   return Math.floor(Math.random() * max);
 }
+
+export async function makeDelay(t: number = 1000) {
+  // eslint-disable-next-line no-promise-executor-return
+  await new Promise<void>((resolve) => setTimeout(() => resolve(), t));
+}

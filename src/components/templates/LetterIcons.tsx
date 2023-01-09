@@ -1,20 +1,19 @@
 import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 
-import { letterFrame } from '@/constants/temp';
 import { commonState, modalState } from '@/stores/common';
 
 type LetterIconsProps = {
-  readonly letterId: keyof typeof letterFrame;
+  readonly src: string;
 };
 
-const LetterIcons: React.FC<LetterIconsProps> = ({ letterId }) => {
+const LetterIcons: React.FC<LetterIconsProps> = ({ src }) => {
   const [common, setCommon] = useRecoilState(commonState);
   const [modal, setModal] = useRecoilState(modalState);
   const selectFrame = async () => {
     setCommon({
       ...common,
-      letterFrameImgURI: letterFrame[letterId],
+      letterFrameImgURI: src,
     });
     setModal({
       ...modal,
@@ -31,7 +30,7 @@ const LetterIcons: React.FC<LetterIconsProps> = ({ letterId }) => {
         font-medium text-white transition hover:scale-105
         hover:bg-opacity-30 focus:outline-none active:bg-opacity-40"
     >
-      <Img src={letterFrame[letterId]} alt="frame" />
+      <Img src={src} alt="frame" />
     </Frame>
   );
 };

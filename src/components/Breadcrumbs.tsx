@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 
+import { breadCrumbSize } from '@/constants/components';
 import { commonState } from '@/stores/common';
 
 const Breadcrumbs: React.FC = () => {
@@ -15,7 +16,11 @@ const Breadcrumbs: React.FC = () => {
         <div key={idx} className="flex items-center">
           <StepFrame
             className="flex flex-col items-center justify-center rounded border py-1"
-            style={{ width: 114 }}
+            style={{
+              opacity: idx < common.step ? '1' : '0.5',
+              cursor: idx < common.step ? 'pointer' : 'unset',
+              width: breadCrumbSize,
+            }}
           >
             <p className="en-font text-lg leading-none">{t(labelEn)}</p>
             {i18n.language === 'ja' ? (

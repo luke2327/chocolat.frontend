@@ -1,6 +1,6 @@
 import { Listbox, Transition } from '@headlessui/react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRecoilState } from 'recoil';
 
@@ -13,15 +13,21 @@ export default function SelectBox() {
   const onChange = (value: Keyword) => {
     setLetter({
       ...letter,
-      selectedKeywordName: value,
+      selectedKeywordId: value.i18nKey,
+      selectedKeywordName: t(value.i18nKey),
+      selectedType: value.type,
     });
   };
 
   const [letter, setLetter] = useRecoilState(letterState);
+  const [keywordList] = useState<Keyword[]>(keyword);
 
   return (
-    <div className="mt-3 w-auto">
-      <Listbox value={letter.selectedKeywordName} onChange={onChange}>
+    <div className="my-3 w-auto">
+      <Listbox
+        value={letter.selectedKeywordName}
+        onChange={(v: unknown) => onChange(v as Keyword)}
+      >
         <div className="relative mt-1">
           <Listbox.Button
             className="
@@ -45,36 +51,38 @@ export default function SelectBox() {
             leaveTo="opacity-0"
           >
             <Listbox.Options
-              className="absolute z-10 mt-1 max-h-60 w-48 overflow-auto
+              className="absolute z-10 mt-1 max-h-60 w-48 cursor-pointer overflow-auto
               rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black
                 ring-opacity-5 focus:outline-none sm:text-sm"
             >
-              {keyword.map((word, idx) => (
+              {keywordList.map((word, idx) => (
                 <Listbox.Option
                   key={idx}
                   className={({ active }) =>
-                    `relative cursor-default select-none py-2 pl-10 opacity-70 pr-4 ${
+                    `relative cursor-pointer select-none py-2 pl-10 opacity-70 pr-4 ${
                       active ? 'bg-amber-100 text-amber-900' : 'text-gray-900'
                     }`
                   }
-                  value={t(word)}
+                  value={word}
                 >
-                  {({ selected }) => (
+                  {
                     <>
                       <span
                         className={`block truncate ${
-                          selected ? 'font-medium' : 'font-normal'
+                          word.i18nKey === letter.selectedKeywordId
+                            ? 'font-medium'
+                            : 'font-normal'
                         }`}
                       >
-                        {t(word)}
+                        {t(word.i18nKey)}
                       </span>
-                      {selected ? (
+                      {word.i18nKey === letter.selectedKeywordId ? (
                         <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
                           <CheckIcon className="h-5 w-5" aria-hidden="true" />
                         </span>
                       ) : null}
                     </>
-                  )}
+                  }
                 </Listbox.Option>
               ))}
             </Listbox.Options>

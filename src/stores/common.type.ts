@@ -1,3 +1,4 @@
+import type { Keyword } from '@/constants/letter.keyword';
 import type { LanguageKey } from '@/i18n/languages/ja';
 
 type LetterState = {
@@ -5,6 +6,7 @@ type LetterState = {
   letters: string;
   selectedKeywordId: LanguageKey;
   selectedKeywordName: string;
+  selectedType: Keyword['type'];
 };
 type CommonState = {
   step: number;
