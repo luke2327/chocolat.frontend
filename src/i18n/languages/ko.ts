@@ -7,6 +7,7 @@ const ko: Language = {
   japanese: '日本語',
   korean: '한국어',
 
+  'letter.keyword0': '모두',
   'letter.keyword1': '생일',
   'letter.keyword2': '크리스마스',
   'letter.keyword3': '발렌타인데이',

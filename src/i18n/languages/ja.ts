@@ -10,6 +10,7 @@ const ja = {
   // 'letter.keyword3': 'バレンタインデー',
   // 'letter.keyword4': 'ホワイトデー',
   // 'letter.keyword5': 'キネンビ',
+  'letter.keyword0': '全部',
   'letter.keyword1': '誕生日',
   'letter.keyword2': 'クリスマス',
   'letter.keyword3': 'バレンタインデー',
