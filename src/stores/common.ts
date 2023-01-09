@@ -12,6 +12,7 @@ const defaultValueLetter: LetterState = {
   letters: '',
   selectedKeywordId: 'letter.keyword1',
   selectedKeywordName: '',
+  selectedType: 'birthday',
 };
 
 export const letterState = atom({
