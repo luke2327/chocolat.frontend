@@ -1,3 +1,17 @@
+# [1.1.0](https://github.com/luke2327/chocolat.frontend/compare/v1.0.0...v1.1.0) (2023-01-09)
+
+
+### Features
+
+* add new i18n ([8a6dff4](https://github.com/luke2327/chocolat.frontend/commit/8a6dff46fbcbc23f8803105b855854fb687c440e))
+* add Transition components ([918fe24](https://github.com/luke2327/chocolat.frontend/commit/918fe243b3e4357702481de19c726dbe6dc0f720))
+* add useDimensions hooks ([51fe083](https://github.com/luke2327/chocolat.frontend/commit/51fe083775deaad4b0edb46c0445675e50af04df))
+* modify components ([60b9d93](https://github.com/luke2327/chocolat.frontend/commit/60b9d93c04105c5e93b1bd28a0137179eb402081))
+* modify index pages ([fc84584](https://github.com/luke2327/chocolat.frontend/commit/fc84584dd37c715a3aafd94733e1e905423860ed))
+* modify template components ([a104de5](https://github.com/luke2327/chocolat.frontend/commit/a104de5a465c90e6d585f26b63cfbeb1c9269449))
+* set new constants ([3fa99d4](https://github.com/luke2327/chocolat.frontend/commit/3fa99d4217b5634bc02943157d811394c24bd3cd))
+* set new state variables ([40f5b40](https://github.com/luke2327/chocolat.frontend/commit/40f5b40db6fe1b35694e46e885b1826eb5f47868))
+
 # 1.0.0 (2023-01-08)
 
 
