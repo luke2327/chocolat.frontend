@@ -51,13 +51,6 @@ export const Main = (props: IMainProps) => {
       return;
     }
 
-    console.log(
-      height,
-      headerElem.clientHeight,
-      footerElem.clientHeight,
-      height - (headerElem.clientHeight + footerElem.clientHeight) - 18
-    );
-
     const serviceHeight =
       height - (headerElem.clientHeight + footerElem.clientHeight) - 30;
 
@@ -65,7 +58,10 @@ export const Main = (props: IMainProps) => {
   }, [common.step]);
 
   return (
-    <div className="xs:w-5 relative mx-auto p-2 lg:w-2/6" ref={containerRef}>
+    <div
+      className="xs:w-5 relative mx-auto p-2 md:w-3/6 lg:w-2/6"
+      ref={containerRef}
+    >
       <div className="w-full px-1 text-gray-700 antialiased">
         {props.meta}
         <div className="mx-auto">
