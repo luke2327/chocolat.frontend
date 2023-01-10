@@ -25,6 +25,7 @@ const ja = {
   'step.customizeEn': 'Customize',
 
   'common.close': '閉じる',
+  'common.select': '選ぶ',
 };
 
 export type LanguageKey = Readonly<keyof typeof ja>;
