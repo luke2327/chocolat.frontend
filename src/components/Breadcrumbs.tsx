@@ -7,13 +7,23 @@ import { breadCrumbSize } from '@/constants/components';
 import { commonState } from '@/stores/common';
 
 const Breadcrumbs: React.FC = () => {
-  const [common] = useRecoilState(commonState);
+  const [common, setCommon] = useRecoilState(commonState);
   const { t, i18n } = useTranslation();
+  const selectTab = (tab: number) => {
+    setCommon({
+      ...common,
+      step: tab + 1,
+    });
+  };
 
   return (
     <div className="flex">
       {common.stepList.map(({ label, labelEn }, idx) => (
-        <div key={idx} className="flex items-center">
+        <div
+          key={idx}
+          className="flex items-center"
+          onClick={idx < common.step ? () => selectTab(idx) : () => {}}
+        >
           <StepFrame
             className="flex flex-col items-center justify-center rounded border py-1"
             style={{
