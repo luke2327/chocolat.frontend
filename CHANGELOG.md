@@ -1,3 +1,17 @@
+# [1.2.0](https://github.com/luke2327/chocolat.frontend/compare/v1.1.0...v1.2.0) (2023-01-22)
+
+
+### Features
+
+* add app constants ([340e5cc](https://github.com/luke2327/chocolat.frontend/commit/340e5ccab48368efcaab5925459d3f1a646a4124))
+* add Element types ([47fdd47](https://github.com/luke2327/chocolat.frontend/commit/47fdd47e4bb34870eb6efd4fffcd911faa2c13b6))
+* add Element types ([c78b008](https://github.com/luke2327/chocolat.frontend/commit/c78b0085e72b5e8de37dab2bbd035549d5f4dda7))
+* add i18n ([9f42887](https://github.com/luke2327/chocolat.frontend/commit/9f428873266636c703c255d25cb2e6b78d1684ee))
+* add i18n ([0261f07](https://github.com/luke2327/chocolat.frontend/commit/0261f07a0e35ae9029859a541e4fd7da7db53d6a))
+* add new packages ([2a815c7](https://github.com/luke2327/chocolat.frontend/commit/2a815c75c72ba230f66d71d0a6ea91495332ab6e))
+* add WriteMessage pages ([4a4737f](https://github.com/luke2327/chocolat.frontend/commit/4a4737f61f981d604e905dc9ea936b045c12faf6))
+* modify components ([ba75894](https://github.com/luke2327/chocolat.frontend/commit/ba758949e349dfa0d66a0e185a24268d62e39124))
+
 # [1.1.0](https://github.com/luke2327/chocolat.frontend/compare/v1.0.0...v1.1.0) (2023-01-09)
 
 
