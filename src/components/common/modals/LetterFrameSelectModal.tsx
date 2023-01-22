@@ -25,7 +25,7 @@ export default function LetterFrameSelectModal() {
     });
     setCommon({
       ...common,
-      step: 1,
+      step: 2,
     });
   };
 
@@ -59,7 +59,7 @@ export default function LetterFrameSelectModal() {
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <div className="mt-2 flex flex-col items-center justify-center">
                     <LetterFrame src={common.letterFrameImgURI} />
-                    <p className="text-sm text-gray-500">234234234</p>
+                    <p className="text-sm text-gray-500">description</p>
                   </div>
 
                   <div className="mt-4 flex justify-end">
@@ -68,7 +68,7 @@ export default function LetterFrameSelectModal() {
                       className="mr-3 inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       onClick={selectLetterFrame}
                     >
-                      Got it, thanks!
+                      {t('common.select')}
                     </button>
                     <button
                       type="button"

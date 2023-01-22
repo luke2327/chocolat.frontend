@@ -85,3 +85,12 @@ html, body {
 .ko-font {
   font-family: 'Cute Font', sans-serif
 }
+
+@keyframes secondary-transition {
+  0% { opacity: 0 };
+  100% { opacity: 1 };
+}
+
+textarea {
+  resize: auto;
+}

@@ -5,6 +5,7 @@ import RightSidePannelModal from '@/components/common/modals/RightSidePannelModa
 import MainBanner from '@/components/layouts/MainBanner';
 import OrdinaryTransition from '@/components/layouts/OrdinaryTransition';
 import withLayout from '@/components/layouts/withLayout';
+import WriteMessage from '@/components/letter/WriteMessage';
 import LetterList from '@/components/LetterList';
 import { commonState } from '@/stores/common';
 
@@ -21,6 +22,11 @@ const Index = () => {
       {step === 1 && (
         <OrdinaryTransition showProps={step === 1}>
           <LetterList />
+        </OrdinaryTransition>
+      )}
+      {step === 2 && (
+        <OrdinaryTransition showProps={step === 2}>
+          <WriteMessage />
         </OrdinaryTransition>
       )}
 
