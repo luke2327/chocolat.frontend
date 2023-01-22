@@ -93,7 +93,10 @@ export const Main = (props: IMainProps) => {
           </div>
           <div
             ref={footerRef}
-            className="en-font border-t border-gray-300 py-4 text-center text-sm"
+            style={{
+              borderTop: '1px solid rgb(210, 214, 221)',
+            }}
+            className="en-font border-t py-3 text-center text-sm"
           >
             © Copyright {new Date().getFullYear()} {AppConfig.title}.
           </div>
