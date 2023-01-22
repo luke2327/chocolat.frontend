@@ -23,6 +23,8 @@ const ko: Language = {
 
   'common.close': '닫기',
   'common.select': '선택',
+  'common.drag': '드래그',
+  'common.sizeCustom': '사이즈 조정',
 };
 
 export default ko;
