@@ -94,3 +94,20 @@ html, body {
 textarea {
   resize: auto;
 }
+
+textarea:focus {
+  appearance: none;
+  background-color: #fff;
+  border-color: #a0aec0;
+  border-width: 1px;
+  border-radius: 0px;
+  padding-top: 0.5rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-shadow: 0 0 #0000;
+  box-shadow: none;
+  border-color: none;
+}

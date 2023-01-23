@@ -6,7 +6,7 @@ type ButtonProps = React.HTMLAttributes<HTMLButtonElement>;
 const Button: React.FC<ButtonProps> = ({ className, ...rest }) => (
   <button
     {...rest}
-    className={`${className} flex items-center justify-center rounded border`}
+    className={`${className} flex items-center justify-center rounded border px-2 py-1`}
     style={{
       borderColor: '#d2d6dd',
       background: `

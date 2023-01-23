@@ -23,6 +23,7 @@ const ja = {
   'common.select': '選ぶ',
   'common.drag': 'ドラッグ',
   'common.sizeCustom': 'サイズ調整',
+  'common.next': '次へ',
 };
 
 export type LanguageKey = Readonly<keyof typeof ja>;

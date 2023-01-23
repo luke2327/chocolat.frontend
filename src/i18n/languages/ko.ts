@@ -25,6 +25,7 @@ const ko: Language = {
   'common.select': '선택',
   'common.drag': '드래그',
   'common.sizeCustom': '사이즈 조정',
+  'common.next': '다음',
 };
 
 export default ko;

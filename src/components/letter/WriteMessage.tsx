@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Draggable from 'react-draggable';
 import { useTranslation } from 'react-i18next';
-import ReactTextareaAutosize from 'react-textarea-autosize';
 import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 
@@ -16,57 +15,66 @@ import { commonState } from '@/stores/common';
 
 import OrdinaryComponent from '../common/OrdinaryComponent';
 
-function useAutoResizeTextArea(value: string | undefined) {
-  const ref = useRef<HTMLTextAreaElement>(null);
-
-  useEffect(() => {
-    const element = ref.current;
-    if (!element) {
-      return;
-    }
-
-    const { borderTopWidth, borderBottomWidth, paddingTop, paddingBottom } =
-      getComputedStyle(element);
-
-    element.style.height = 'auto';
-    element.style.height = `calc(${element.scrollHeight}px + ${paddingTop} + ${paddingBottom} + ${borderTopWidth} + ${borderBottomWidth})`;
-  }, [value]);
-
-  return ref;
-}
-
 const WriteMessage: React.FC = () => {
+  const frameBackgroundRef = useRef<HTMLDivElement>(null);
   const [common] = useRecoilState(commonState);
   const [dragable, setDragable] = useState(false);
   const [value, setValue] = useState('');
-  const textareaRef = useAutoResizeTextArea(value);
   const { t } = useTranslation();
+  const [maxHeightMessage, setMaxHeightMessage] = useState(0);
+  const [bestHeightMessage, setBestHeightMessage] = useState(0);
+  const [maxWidthMessage, setMaxWidthMessage] = useState(0);
+  const [bestWidthMessage, setBestWidthMessage] = useState(0);
+
+  useEffect(() => {
+    if (frameBackgroundRef.current) {
+      setMaxHeightMessage(frameBackgroundRef.current.clientHeight - 80);
+      setBestHeightMessage(frameBackgroundRef.current.clientHeight - 80);
+      setMaxWidthMessage(frameBackgroundRef.current.clientWidth - 60);
+      setBestWidthMessage(frameBackgroundRef.current.clientWidth - 60);
+    }
+  });
 
   return (
     <div>
-      <FrameBackground backgroundURI={common.letterFrameImgURI}>
+      <FrameBackground
+        ref={frameBackgroundRef}
+        backgroundURI={common.letterFrameImgURI}
+      >
         <div className="flex items-center justify-center">
           <Draggable disabled={dragable}>
-            <ReactTextareaAutosize
-              ref={textareaRef}
+            <TextArea
               maxLength={messageMaxLength}
               autoFocus
               value={value}
               onChange={(e) => setValue(e.target.value)}
-              style={{ backgroundColor: 'transparent' }}
+              style={{
+                backgroundColor: 'transparent',
+                maxHeight: maxHeightMessage,
+                height: bestHeightMessage,
+                maxWidth: maxWidthMessage,
+                width: bestWidthMessage,
+              }}
             />
           </Draggable>
         </div>
       </FrameBackground>
-      <div className="flex pt-1">
-        <OrdinaryComponent.Button
-          onClick={() => setDragable(!dragable)}
-          className="mr-2"
-        >
-          {dragable ? t('common.sizeCustom') : t('common.drag')}
-        </OrdinaryComponent.Button>
+      <div className="flex justify-between pt-1">
+        <div className="flex items-center">
+          <OrdinaryComponent.Button
+            onClick={() => setDragable(!dragable)}
+            className="mr-2"
+          >
+            {dragable ? t('common.sizeCustom') : t('common.drag')}
+          </OrdinaryComponent.Button>
+          <div>
+            {value.length}/{messageMaxLength}
+          </div>
+        </div>
         <div>
-          {value.length}/{messageMaxLength}
+          <OrdinaryComponent.Button>
+            {t('common.next')}
+          </OrdinaryComponent.Button>
         </div>
       </div>
     </div>
@@ -76,14 +84,16 @@ const WriteMessage: React.FC = () => {
 export default WriteMessage;
 
 const FrameBackground = styled.div<{ backgroundURI: string }>`
+  border-radius: 12px;
+  box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.25);
   background: url(${(props) => props.backgroundURI});
   aspect-ratio: ${aspectRatioX} / ${aspectRatioY};
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 351px;
-  max-height: 500px;
   display: flex;
   justify-content: center;
-  margin: 0 auto;
+  margin: 12px;
 `;
+
+const TextArea = styled.textarea``;
