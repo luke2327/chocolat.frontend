@@ -26,6 +26,8 @@ const ko: Language = {
   'common.drag': '드래그',
   'common.sizeCustom': '사이즈 조정',
   'common.next': '다음',
+  'common.translate': '번역',
+  'common.back': '되돌리기',
 };
 
 export default ko;

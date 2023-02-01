@@ -24,6 +24,8 @@ const ja = {
   'common.drag': 'ドラッグ',
   'common.sizeCustom': 'サイズ調整',
   'common.next': '次へ',
+  'common.translate': '翻訳',
+  'common.back': '戻る',
 };
 
 export type LanguageKey = Readonly<keyof typeof ja>;
