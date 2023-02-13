@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 
+import { translateLanguage } from '@/apis';
 import {
   aspectRatioX,
   aspectRatioY,
@@ -18,13 +19,14 @@ import OrdinaryComponent from '../common/OrdinaryComponent';
 const WriteMessage: React.FC = () => {
   const frameBackgroundRef = useRef<HTMLDivElement>(null);
   const [common] = useRecoilState(commonState);
-  const [dragable, setDragable] = useState(false);
+  const [dragable, setDragable] = useState(true);
   const [value, setValue] = useState('');
-  const { t } = useTranslation();
+  const [oldValue, setOldValue] = useState('');
   const [maxHeightMessage, setMaxHeightMessage] = useState(0);
   const [bestHeightMessage, setBestHeightMessage] = useState(0);
   const [maxWidthMessage, setMaxWidthMessage] = useState(0);
   const [bestWidthMessage, setBestWidthMessage] = useState(0);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (frameBackgroundRef.current) {
@@ -34,6 +36,17 @@ const WriteMessage: React.FC = () => {
       setBestWidthMessage(frameBackgroundRef.current.clientWidth - 60);
     }
   });
+
+  const translateLanguate = async () => {
+    setOldValue(value);
+    const result = await translateLanguage(value);
+
+    setValue(result);
+  };
+
+  const resetValueToOld = () => {
+    setValue(oldValue);
+  };
 
   return (
     <div>
@@ -59,7 +72,7 @@ const WriteMessage: React.FC = () => {
           </Draggable>
         </div>
       </FrameBackground>
-      <div className="flex justify-between pt-1">
+      <div className="flex justify-between py-1">
         <div className="flex items-center">
           <OrdinaryComponent.Button
             onClick={() => setDragable(!dragable)}
@@ -67,11 +80,20 @@ const WriteMessage: React.FC = () => {
           >
             {dragable ? t('common.sizeCustom') : t('common.drag')}
           </OrdinaryComponent.Button>
-          <div>
+          <OrdinaryComponent.Button
+            onClick={translateLanguate}
+            className="mr-2"
+          >
+            {t('common.translate')}
+          </OrdinaryComponent.Button>
+          <OrdinaryComponent.Button onClick={resetValueToOld} className="mr-2">
+            {t('common.back')}
+          </OrdinaryComponent.Button>
+        </div>
+        <div className="flex items-center">
+          <div className="mr-2">
             {value.length}/{messageMaxLength}
           </div>
-        </div>
-        <div>
           <OrdinaryComponent.Button>
             {t('common.next')}
           </OrdinaryComponent.Button>
@@ -85,7 +107,7 @@ export default WriteMessage;
 
 const FrameBackground = styled.div<{ backgroundURI: string }>`
   border-radius: 12px;
-  box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 4px 4px 2px 0 rgba(0, 0, 0, 0.25);
   background: url(${(props) => props.backgroundURI});
   aspect-ratio: ${aspectRatioX} / ${aspectRatioY};
   background-size: contain;
@@ -94,6 +116,9 @@ const FrameBackground = styled.div<{ backgroundURI: string }>`
   display: flex;
   justify-content: center;
   margin: 12px;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const TextArea = styled.textarea``;

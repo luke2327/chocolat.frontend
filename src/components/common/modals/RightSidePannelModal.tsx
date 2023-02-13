@@ -3,6 +3,7 @@ import { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRecoilState } from 'recoil';
 
+import type { SupportedLanguage } from '@/constants/AppConfig';
 import i18n from '@/i18n/i18n';
 import { configState, defaultValueModal, modalState } from '@/stores/common';
 
@@ -15,7 +16,7 @@ export default function RightSidePannelModal() {
     setModal(defaultValueModal);
   }
 
-  function changeLanguage(locale: 'ja' | 'ko') {
+  function changeLanguage(locale: SupportedLanguage) {
     i18n.changeLanguage(locale);
     setConfig({
       ...config,
@@ -65,6 +66,12 @@ export default function RightSidePannelModal() {
                         className="ko-font w-16 cursor-pointer rounded-md bg-gray-300 bg-opacity-50 p-1 text-center text-xs hover:bg-gray-400"
                       >
                         {t('korean')}
+                      </p>
+                      <p
+                        onClick={() => changeLanguage('en')}
+                        className="en-font w-16 cursor-pointer rounded-md bg-gray-300 bg-opacity-50 p-1 text-center text-xs hover:bg-gray-400"
+                      >
+                        {t('english')}
                       </p>
                     </div>
                   </div>

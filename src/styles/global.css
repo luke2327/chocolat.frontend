@@ -69,6 +69,7 @@ a:hover {
 
 :lang(ko) { font-family:'dongdong', sans-serif }
 :lang(ja) { font-family: 'HuiFont', sans-serif }
+:lang(en) { font-family: 'YeonSung', sans-serif }
 
 html, body {
   width: 100vw;
@@ -87,20 +88,19 @@ html, body {
 }
 
 @keyframes secondary-transition {
-  0% { opacity: 0 };
-  100% { opacity: 1 };
+  0% { opacity: 0 }
+  100% { opacity: 1 }
 }
 
 textarea {
-  resize: auto;
+  resize: initial
 }
 
 textarea:focus {
   appearance: none;
   background-color: #fff;
-  border-color: #a0aec0;
   border-width: 1px;
-  border-radius: 0px;
+  border-radius: 0;
   padding-top: 0.5rem;
   padding-right: 0.75rem;
   padding-bottom: 0.5rem;
@@ -109,5 +109,5 @@ textarea:focus {
   line-height: 1.5rem;
   --tw-shadow: 0 0 #0000;
   box-shadow: none;
-  border-color: none;
+  border-color: unset;
 }

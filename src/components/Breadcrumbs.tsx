@@ -33,11 +33,17 @@ const Breadcrumbs: React.FC = () => {
               width: breadCrumbSize,
             }}
           >
-            <p className="en-font text-lg leading-none">{t(labelEn)}</p>
+            {i18n.language !== 'en' ? (
+              <p className="en-font text-lg leading-none">{t(labelEn)}</p>
+            ) : null}
             {i18n.language === 'ja' ? (
-              <p className="pb-1 text-sm font-bold leading-none">{t(label)}</p>
+              <p className="pb-1 text-sm font-bold leading-none max-[500px]:text-[0.75rem]">
+                {t(label)}
+              </p>
             ) : (
-              <p className="text-lg leading-none tracking-widest">{t(label)}</p>
+              <p className="text-lg leading-none tracking-widest max-[500px]:text-[1rem]">
+                {t(label)}
+              </p>
             )}
           </OrdinaryComponent.Button>
           {idx < common.stepList.length - 1 && (
