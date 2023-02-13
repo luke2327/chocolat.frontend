@@ -4,6 +4,7 @@ const ja = {
   language: '言語',
   japanese: '日本語',
   korean: '한국어',
+  english: 'English',
 
   'letter.keyword0': '全部',
   'letter.keyword1': '誕生日',
