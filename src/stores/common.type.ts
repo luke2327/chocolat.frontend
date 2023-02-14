@@ -1,3 +1,4 @@
+import type { SupportedLanguage } from '@/constants/AppConfig';
 import type { Keyword } from '@/constants/letter.keyword';
 import type { LanguageKey } from '@/i18n/languages/ja';
 
@@ -17,8 +18,9 @@ type CommonState = {
   }[];
   letterFrameImgURI: string;
 };
+
 type ConfigState = {
-  currentLocale: 'ja' | 'ko';
+  currentLocale: SupportedLanguage;
 };
 type ModalState = {
   letterFrameSelectModal: boolean;

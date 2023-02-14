@@ -52,14 +52,14 @@ export const Main = (props: IMainProps) => {
     }
 
     const serviceHeight =
-      height - (headerElem.clientHeight + footerElem.clientHeight) - 30;
+      height - (headerElem.clientHeight + footerElem.clientHeight) + 30;
 
     servicesElem.style.maxHeight = `${serviceHeight}px`;
   }, [common.step]);
 
   return (
     <div
-      className="xs:w-5 relative mx-auto p-2 md:w-3/6 lg:w-2/6"
+      className="xs:w-5 relative mx-auto min-[500px]:w-[25rem] sm:w-[25rem] md:w-[25rem] lg:w-[25rem]"
       ref={containerRef}
     >
       <div className="w-full px-1 text-gray-700 antialiased">
@@ -79,7 +79,9 @@ export const Main = (props: IMainProps) => {
                 </div>
               </div>
 
-              <div className="m-0 text-xl">{props.description}</div>
+              {common.step === 0 && (
+                <div className="m-0 text-xl">{props.description}</div>
+              )}
             </div>
             {common.step > 0 && (
               <>
@@ -90,8 +92,17 @@ export const Main = (props: IMainProps) => {
           </div>
           <div className="overflow-y-scroll py-2" ref={serviceRef}>
             {props.children}
+            <div
+              ref={footerRef}
+              style={{
+                borderTop: '1px solid rgb(210, 214, 221)',
+              }}
+              className="en-font border-t py-3 text-center text-sm"
+            >
+              © Copyright {new Date().getFullYear()} {AppConfig.title}.
+            </div>
           </div>
-          <div
+          {/* <div
             ref={footerRef}
             style={{
               borderTop: '1px solid rgb(210, 214, 221)',
@@ -99,7 +110,7 @@ export const Main = (props: IMainProps) => {
             className="en-font border-t py-3 text-center text-sm"
           >
             © Copyright {new Date().getFullYear()} {AppConfig.title}.
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

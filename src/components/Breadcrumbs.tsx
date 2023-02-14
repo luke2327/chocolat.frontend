@@ -5,7 +5,7 @@ import { useRecoilState } from 'recoil';
 import { breadCrumbSize } from '@/constants/components';
 import { commonState } from '@/stores/common';
 
-import OrdinaryButton from './common/OrdinaryButton';
+import OrdinaryComponent from './common/OrdinaryComponent';
 
 const Breadcrumbs: React.FC = () => {
   const [common, setCommon] = useRecoilState(commonState);
@@ -25,7 +25,7 @@ const Breadcrumbs: React.FC = () => {
           className="flex items-center"
           onClick={idx < common.step ? () => selectTab(idx) : () => {}}
         >
-          <OrdinaryButton
+          <OrdinaryComponent.Button
             className="flex-col py-1"
             style={{
               opacity: idx < common.step ? '1' : '0.5',
@@ -33,13 +33,19 @@ const Breadcrumbs: React.FC = () => {
               width: breadCrumbSize,
             }}
           >
-            <p className="en-font text-lg leading-none">{t(labelEn)}</p>
+            {i18n.language !== 'en' ? (
+              <p className="en-font text-lg leading-none">{t(labelEn)}</p>
+            ) : null}
             {i18n.language === 'ja' ? (
-              <p className="pb-1 text-sm font-bold leading-none">{t(label)}</p>
+              <p className="pb-1 text-sm font-bold leading-none max-[500px]:text-[0.75rem]">
+                {t(label)}
+              </p>
             ) : (
-              <p className="text-lg leading-none tracking-widest">{t(label)}</p>
+              <p className="text-lg leading-none tracking-widest max-[500px]:text-[1rem]">
+                {t(label)}
+              </p>
             )}
-          </OrdinaryButton>
+          </OrdinaryComponent.Button>
           {idx < common.stepList.length - 1 && (
             <span className="en-font px-1">&gt;</span>
           )}

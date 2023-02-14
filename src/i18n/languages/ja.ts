@@ -4,6 +4,7 @@ const ja = {
   language: '言語',
   japanese: '日本語',
   korean: '한국어',
+  english: 'English',
 
   'letter.keyword0': '全部',
   'letter.keyword1': '誕生日',
@@ -23,6 +24,9 @@ const ja = {
   'common.select': '選ぶ',
   'common.drag': 'ドラッグ',
   'common.sizeCustom': 'サイズ調整',
+  'common.next': '次へ',
+  'common.translate': '翻訳',
+  'common.back': '戻る',
 };
 
 export type LanguageKey = Readonly<keyof typeof ja>;
