@@ -27,6 +27,7 @@ const ja = {
   'common.next': '次へ',
   'common.translate': '翻訳',
   'common.back': '戻る',
+  'common.clear': 'リセット',
 };
 
 export type LanguageKey = Readonly<keyof typeof ja>;

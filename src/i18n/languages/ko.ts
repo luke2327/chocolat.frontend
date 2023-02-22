@@ -29,6 +29,7 @@ const ko: Language = {
   'common.next': '다음',
   'common.translate': '번역',
   'common.back': '되돌리기',
+  'common.clear': '초기화',
 };
 
 export default ko;
