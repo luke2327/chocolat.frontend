@@ -12,15 +12,15 @@ import {
   aspectRatioY,
   messageMaxLength,
 } from '@/constants/components';
-import { commonState } from '@/stores/common';
+import { commonState, letterState } from '@/stores/common';
 
 import OrdinaryComponent from '../common/OrdinaryComponent';
 
 const WriteMessage: React.FC = () => {
   const frameBackgroundRef = useRef<HTMLDivElement>(null);
   const [common] = useRecoilState(commonState);
+  const [letter, setLetter] = useRecoilState(letterState);
   const [dragable, setDragable] = useState(true);
-  const [value, setValue] = useState('');
   const [oldValue, setOldValue] = useState('');
   const [maxHeightMessage, setMaxHeightMessage] = useState(0);
   const [bestHeightMessage, setBestHeightMessage] = useState(0);
@@ -38,14 +38,28 @@ const WriteMessage: React.FC = () => {
   });
 
   const translateLanguate = async () => {
-    setOldValue(value);
-    const result = await translateLanguage(value);
+    setOldValue(letter.letters);
 
-    setValue(result);
+    const result = await translateLanguage(letter.letters);
+
+    setLetter({
+      ...letter,
+      letters: result,
+    });
   };
 
   const resetValueToOld = () => {
-    setValue(oldValue);
+    setLetter({
+      ...letter,
+      letters: oldValue,
+    });
+  };
+
+  const clearMessage = () => {
+    setLetter({
+      ...letter,
+      letters: '',
+    });
   };
 
   return (
@@ -59,8 +73,13 @@ const WriteMessage: React.FC = () => {
             <TextArea
               maxLength={messageMaxLength}
               autoFocus
-              value={value}
-              onChange={(e) => setValue(e.target.value)}
+              value={letter.letters}
+              onChange={(e) =>
+                setLetter({
+                  ...letter,
+                  letters: e.target.value,
+                })
+              }
               style={{
                 backgroundColor: 'transparent',
                 maxHeight: maxHeightMessage,
@@ -89,10 +108,13 @@ const WriteMessage: React.FC = () => {
           <OrdinaryComponent.Button onClick={resetValueToOld} className="mr-2">
             {t('common.back')}
           </OrdinaryComponent.Button>
+          <OrdinaryComponent.Button onClick={clearMessage} className="mr-2">
+            {t('common.clear')}
+          </OrdinaryComponent.Button>
         </div>
         <div className="flex items-center">
           <div className="mr-2">
-            {value.length}/{messageMaxLength}
+            {letter.letters.length}/{messageMaxLength}
           </div>
           <OrdinaryComponent.Button>
             {t('common.next')}
