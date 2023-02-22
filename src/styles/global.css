@@ -20,52 +20,59 @@ a:hover {
   @apply my-6;
 } */
 
+/*noinspection CssUnknownTarget*/
 @font-face {
   font-family: 'dongdong';
-  src: url('https://maria2000.s3.ap-northeast-1.amazonaws.com/dongdong.ttf');
+  src: url('/assets/fonts/dongdong.ttf');
   font-weight: normal;
   font-style: normal;
 }
 
+/*noinspection CssUnknownTarget*/
 @font-face {
   font-family: 'KaiseiDecol';
-  src: url('https://maria2000.s3.ap-northeast-1.amazonaws.com/KaiseiDecol-Regular.ttf');
+  src: url('/assets/fonts/KaiseiDecol-Regular.ttf');
   font-weight: normal;
   font-style: normal;
 }
 
+/*noinspection CssUnknownTarget*/
 @font-face {
   font-family: 'Yosugara';
-  src: url('https://maria2000.s3.ap-northeast-1.amazonaws.com/yosugara1.1.ttf');
+  src: url('/assets/fonts/yosugara1.1.ttf');
   font-weight: normal;
   font-style: normal;
 }
 
+/*noinspection CssUnknownTarget*/
 @font-face {
   font-family: 'HuiFont109';
-  src: url('https://maria2000.s3.ap-northeast-1.amazonaws.com/HuiFont109.ttf');
+  src: url('/assets/fonts/HuiFont109.ttf');
 }
 
+/*noinspection CssUnknownTarget*/
 @font-face {
   font-family: 'HuiFont';
-  src: url('https://maria2000.s3.ap-northeast-1.amazonaws.com/HuiFont29.ttf');
+  src: url('/assets/fonts/HuiFont29.ttf');
 }
 
+/*noinspection CssUnknownTarget*/
 @font-face {
-  font-family: 'FUTENE';
-  src: url('https://maria2000.s3.ap-northeast-1.amazonaws.com/FUTENE.ttf');
-}
-@font-face {
-  font-family: '001Shirokuma';
-  src: url('https://maria2000.s3.ap-northeast-1.amazonaws.com/001Shirokuma-Regular.otf') format('otf');
+  font-family: 'futene';
+  src: url('/assets/fonts/futene.ttf');
 }
 
-/** english */
+/*noinspection CssUnknownTarget*/
+@font-face {
+  font-family: 'Shirokuma';
+  src: url('/assets/fonts/Shirokuma-Regular.otf') format('otf');
+}
+
+/*noinspection CssUnknownTarget*/
 @font-face {
   font-family: 'YeonSung';
-  src: url('https://maria2000.s3.ap-northeast-1.amazonaws.com/YeonSung-Regular.ttf');
+  src: url('/assets/fonts/YeonSung-Regular.ttf');
 }
-
 
 :lang(ko) { font-family:'dongdong', sans-serif }
 :lang(ja) { font-family: 'HuiFont', sans-serif }
@@ -110,4 +117,13 @@ textarea:focus {
   --tw-shadow: 0 0 #0000;
   box-shadow: none;
   border-color: unset;
+}
+
+#mainWrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#mainWrapper::-webkit-scrollbar {
+  display: none;
 }

@@ -27,4 +27,16 @@ type ModalState = {
   rightSidePannelModal: boolean;
 };
 
-export type { CommonState, ConfigState, LetterState, ModalState };
+type LetterTemplateState = {
+  letter_template_no: number;
+  ja_text: string;
+  ko_text: string;
+};
+
+export type {
+  CommonState,
+  ConfigState,
+  LetterState,
+  LetterTemplateState,
+  ModalState,
+};

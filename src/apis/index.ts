@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import type { LetterTemplateState } from '@/stores/common.type';
+
 const translateLanguage = async (text: string) => {
   const {
     data: { result },
@@ -15,4 +17,15 @@ const translateLanguage = async (text: string) => {
   return result;
 };
 
-export { translateLanguage };
+const getLetterTemplate = async () => {
+  const {
+    data: { result },
+  } = await axios.post<{ result: LetterTemplateState[] }>(
+    'http://localhost:3000/letter/getLetterTemplate',
+    {}
+  );
+
+  return result;
+};
+
+export { getLetterTemplate, translateLanguage };

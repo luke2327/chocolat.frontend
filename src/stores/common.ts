@@ -4,6 +4,7 @@ import type {
   CommonState,
   ConfigState,
   LetterState,
+  LetterTemplateState,
   ModalState,
 } from './common.type';
 
@@ -62,4 +63,12 @@ export const defaultValueModal: ModalState = {
 export const modalState = atom({
   key: 'modalState',
   default: defaultValueModal,
+});
+
+const defaultValueLetterTemplate: LetterTemplateState[] =
+  [] as LetterTemplateState[];
+
+export const letterTemplateState = atom({
+  key: 'letterTemplateState',
+  default: defaultValueLetterTemplate,
 });

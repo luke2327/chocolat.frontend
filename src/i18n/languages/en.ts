@@ -29,6 +29,7 @@ const en: Language = {
   'common.next': 'Next',
   'common.translate': 'Translation',
   'common.back': 'Back',
+  'common.clear': 'Clear',
 };
 
 export default en;
