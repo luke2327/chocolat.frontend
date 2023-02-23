@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="017d0673-8b05-497f-a053-507403d8c1ef" name="변경" comment="fix: package conflict (downgrade dependencies)" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="features-005-20230123" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.github/workflows/release.yml" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="ProjectId" id="2LUtaJpXtH8s3ac5IwfGjzRdJg8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/rui/dev/chocolat.frontend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "prettierjs.PrettierConfiguration.Package": "/Users/rui/dev/chocolat.frontend/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "/Users/rui/Library/Application Support/JetBrains/Toolbox/apps/WebStorm/ch-0/223.8617.44/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="017d0673-8b05-497f-a053-507403d8c1ef" name="변경" comment="" />
+      <created>1675937550936</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675937550936</updated>
+      <workItem from="1675937552496" duration="2663000" />
+      <workItem from="1676280307668" duration="5714000" />
+      <workItem from="1676360787063" duration="1642000" />
+      <workItem from="1676371135016" duration="10955000" />
+      <workItem from="1676508392088" duration="15862000" />
+      <workItem from="1676528469345" duration="597000" />
+      <workItem from="1676625438424" duration="10983000" />
+      <workItem from="1677051700112" duration="2325000" />
+    </task>
+    <task id="LOCAL-00001" summary="feat: support english">
+      <created>1676290924060</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676290924060</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: add resize functions">
+      <created>1676290981461</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1676290981461</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: translate functions">
+      <created>1676291166758</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1676291166758</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: add jetBrains files">
+      <created>1676291249300</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676291249300</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix: semantic-release (node versions)">
+      <created>1676338007437</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1676338007437</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fix: css module load">
+      <created>1676626831210</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676626831210</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat(add): font assets">
+      <created>1676626855669</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1676626855669</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: next config &gt; turn off `reactStrictMode`">
+      <created>1677052703590</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1677052703590</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat(add): i18n">
+      <created>1677052754171</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1677052754171</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat(add): recoil state">
+      <created>1677052804999</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1677052804999</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat(add): letter template Apis">
+      <created>1677052859943</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1677052859943</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat(add): letter template Components">
+      <created>1677052949631</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1677052949631</updated>
+    </task>
+    <task id="LOCAL-00013" summary="chore: props className">
+      <created>1677053011001</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1677053011001</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fix: package conflict (downgrade dependencies)">
+      <created>1677053372092</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1677053372092</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: support english" />
+    <MESSAGE value="feat: add resize functions" />
+    <MESSAGE value="feat: translate functions" />
+    <MESSAGE value="feat: add jetBrains files" />
+    <MESSAGE value="fix: semantic-release (node versions)" />
+    <MESSAGE value="fix: css module load" />
+    <MESSAGE value="feat(add): font assets" />
+    <MESSAGE value="feat: next config &gt; turn off `reactStrictMode`" />
+    <MESSAGE value="feat(add): i18n" />
+    <MESSAGE value="feat(add): recoil state" />
+    <MESSAGE value="feat(add): letter template Apis" />
+    <MESSAGE value="feat(add): letter template Components" />
+    <MESSAGE value="chore: props className" />
+    <MESSAGE value="fix: package conflict (downgrade dependencies)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: package conflict (downgrade dependencies)" />
+  </component>
+</project>
