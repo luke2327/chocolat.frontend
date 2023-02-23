@@ -1,3 +1,31 @@
+# [1.3.0](https://github.com/luke2327/chocolat.frontend/compare/v1.2.0...v1.3.0) (2023-02-23)
+
+
+### Bug Fixes
+
+* css module load ([c55cdbe](https://github.com/luke2327/chocolat.frontend/commit/c55cdbee39bfa2c15d22ff044fabac5c67387631))
+* modify github Actions ([3025165](https://github.com/luke2327/chocolat.frontend/commit/3025165df8c097ab7b77a52fd11cb480e2da7787))
+* package conflict (downgrade dependencies) ([50b2cf1](https://github.com/luke2327/chocolat.frontend/commit/50b2cf1472ff23669f2e1387d5ebddfb1dd7d16e))
+* semantic-release (node versions) ([6d40253](https://github.com/luke2327/chocolat.frontend/commit/6d402530c790321cd2732970070821534ae04c0e))
+
+
+### Features
+
+* add i18n ([0186031](https://github.com/luke2327/chocolat.frontend/commit/01860316b03fcff82e7039c3c1128f5c03c407cc))
+* add i18n ([218f675](https://github.com/luke2327/chocolat.frontend/commit/218f6758eccede3f8cdff4f2c61c6d388df15cfc))
+* add jetBrains files ([6bfe03b](https://github.com/luke2327/chocolat.frontend/commit/6bfe03b98234fe3df4eee6b4f63fba0f1e7d6150))
+* add prototype Apis ([9531e48](https://github.com/luke2327/chocolat.frontend/commit/9531e48eb4890126e089c3f35bce6b65d17de250))
+* add resize functions ([5fc04a5](https://github.com/luke2327/chocolat.frontend/commit/5fc04a5992d108a60303f2b7dd6f6442025e2b0a))
+* **add:** font assets ([c5bb475](https://github.com/luke2327/chocolat.frontend/commit/c5bb4754c1e0d1cccbe20bd2f4b0d7b666eeb011))
+* **add:** i18n ([03f0717](https://github.com/luke2327/chocolat.frontend/commit/03f0717d9931b0dcf0598561f406a9de517d4559))
+* **add:** letter template Apis ([c08dcad](https://github.com/luke2327/chocolat.frontend/commit/c08dcad6410f02ff82161ee90c1593f03c27c013))
+* **add:** letter template Components ([0e7892c](https://github.com/luke2327/chocolat.frontend/commit/0e7892c2c93b2ac1f37bbb9831e7d09ba962d59e))
+* **add:** recoil state ([1efff7a](https://github.com/luke2327/chocolat.frontend/commit/1efff7af2232fb4d6438da8d82dbc349dbdc1952))
+* modify app description ([3e95d4c](https://github.com/luke2327/chocolat.frontend/commit/3e95d4cad18988bc095f3f3bc4e55c74110aeca1))
+* next config > turn off `reactStrictMode` ([7d4b734](https://github.com/luke2327/chocolat.frontend/commit/7d4b734b346af26a1d5a0899af2e013abab43516))
+* support english ([e9fdd85](https://github.com/luke2327/chocolat.frontend/commit/e9fdd85b8a6318468716886d5686839eb58a5209))
+* translate functions ([6036b98](https://github.com/luke2327/chocolat.frontend/commit/6036b982f5fe73461dcacd2f86cb67592ed998c6))
+
 # [1.2.0](https://github.com/luke2327/chocolat.frontend/compare/v1.1.0...v1.2.0) (2023-01-22)
 
 
