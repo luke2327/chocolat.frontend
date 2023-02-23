@@ -1,3 +1,4 @@
+import type { SupportedLanguage } from '@/constants/AppConfig';
 import type { Keyword } from '@/constants/letter.keyword';
 import type { LanguageKey } from '@/i18n/languages/ja';
 
@@ -17,12 +18,25 @@ type CommonState = {
   }[];
   letterFrameImgURI: string;
 };
+
 type ConfigState = {
-  currentLocale: 'ja' | 'ko';
+  currentLocale: SupportedLanguage;
 };
 type ModalState = {
   letterFrameSelectModal: boolean;
   rightSidePannelModal: boolean;
 };
 
-export type { CommonState, ConfigState, LetterState, ModalState };
+type LetterTemplateState = {
+  letter_template_no: number;
+  ja_text: string;
+  ko_text: string;
+};
+
+export type {
+  CommonState,
+  ConfigState,
+  LetterState,
+  LetterTemplateState,
+  ModalState,
+};
