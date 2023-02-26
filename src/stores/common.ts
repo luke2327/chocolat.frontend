@@ -3,25 +3,29 @@ import { atom } from 'recoil';
 import type {
   CommonState,
   ConfigState,
+  ElemRefs,
   LetterState,
   LetterTemplateState,
   ModalState,
 } from './common.type';
 
-const defaultValueLetter: LetterState = {
+/** Letters */
+const LetterDefault: LetterState = {
   letterId: null,
   letters: '',
   selectedKeywordId: 'letter.keyword1',
   selectedKeywordName: '',
   selectedType: 'birthday',
+  dragable: true,
 };
 
 export const letterState = atom({
   key: 'letterState',
-  default: defaultValueLetter,
+  default: LetterDefault,
 });
 
-export const defaultValueCommon: CommonState = {
+/** Common */
+export const CommonDefault: CommonState = {
   step: 0,
   totalStep: 3,
   stepList: [
@@ -43,32 +47,48 @@ export const defaultValueCommon: CommonState = {
 
 export const commonState = atom({
   key: 'commonState',
-  default: defaultValueCommon,
+  default: CommonDefault,
 });
 
-const defaultValueConfig: ConfigState = {
+/** Configuration */
+const ConfigDefault: ConfigState = {
   currentLocale: 'ja',
 };
 
 export const configState = atom({
   key: 'configState',
-  default: defaultValueConfig,
+  default: ConfigDefault,
 });
 
-export const defaultValueModal: ModalState = {
+/** Modals */
+export const ModalDefault: ModalState = {
   letterFrameSelectModal: false,
   rightSidePannelModal: false,
 };
 
 export const modalState = atom({
   key: 'modalState',
-  default: defaultValueModal,
+  default: ModalDefault,
 });
 
-const defaultValueLetterTemplate: LetterTemplateState[] =
+/** Letter templates */
+const LetterTemplateDefault: LetterTemplateState[] =
   [] as LetterTemplateState[];
 
 export const letterTemplateState = atom({
   key: 'letterTemplateState',
-  default: defaultValueLetterTemplate,
+  default: LetterTemplateDefault,
+});
+
+/** Element Ref */
+const ElemRefsDefault: ElemRefs = {
+  header: {
+    height: 0,
+    width: 0,
+  },
+};
+
+export const elemRefsState = atom({
+  key: 'ElemRefsState',
+  default: ElemRefsDefault,
 });

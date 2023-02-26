@@ -8,6 +8,7 @@ type LetterState = {
   selectedKeywordId: LanguageKey;
   selectedKeywordName: string;
   selectedType: Keyword['type'];
+  dragable: boolean;
 };
 type CommonState = {
   step: number;
@@ -33,9 +34,19 @@ type LetterTemplateState = {
   ko_text: string;
 };
 
+type RefsDimensions = {
+  height: number;
+  width: number;
+};
+
+type ElemRefs = {
+  header: RefsDimensions;
+};
+
 export type {
   CommonState,
   ConfigState,
+  ElemRefs,
   LetterState,
   LetterTemplateState,
   ModalState,
