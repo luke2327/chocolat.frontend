@@ -13,9 +13,9 @@ import type {
 const LetterDefault: LetterState = {
   letterId: null,
   letters: '',
-  selectedKeywordId: 'letter.keyword1',
+  selectedKeywordId: 'letter.keyword0',
   selectedKeywordName: '',
-  selectedType: 'birthday',
+  selectedType: 'all',
   dragable: true,
 };
 
