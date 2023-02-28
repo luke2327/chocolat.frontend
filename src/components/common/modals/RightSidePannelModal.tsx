@@ -5,7 +5,7 @@ import { useRecoilState } from 'recoil';
 
 import type { SupportedLanguage } from '@/constants/AppConfig';
 import i18n from '@/i18n/i18n';
-import { configState, defaultValueModal, modalState } from '@/stores/common';
+import { configState, ModalDefault, modalState } from '@/stores/common';
 
 export default function RightSidePannelModal() {
   const { t } = useTranslation();
@@ -13,7 +13,7 @@ export default function RightSidePannelModal() {
   const [config, setConfig] = useRecoilState(configState);
 
   function closeModal() {
-    setModal(defaultValueModal);
+    setModal(ModalDefault);
   }
 
   function changeLanguage(locale: SupportedLanguage) {
