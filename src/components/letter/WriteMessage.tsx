@@ -2,11 +2,9 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Draggable from 'react-draggable';
-import { useTranslation } from 'react-i18next';
 import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 
-import { translateLanguage } from '@/apis';
 import {
   aspectRatioX,
   aspectRatioY,
@@ -14,19 +12,15 @@ import {
 } from '@/constants/components';
 import { commonState, letterState } from '@/stores/common';
 
-import OrdinaryComponent from '../common/OrdinaryComponent';
-
 const WriteMessage: React.FC = () => {
   const frameBackgroundRef = useRef<HTMLDivElement>(null);
+  const textAreaRef = useRef<HTMLTextAreaElement>(null);
   const [common] = useRecoilState(commonState);
   const [letter, setLetter] = useRecoilState(letterState);
-  const [dragable, setDragable] = useState(true);
-  const [oldValue, setOldValue] = useState('');
   const [maxHeightMessage, setMaxHeightMessage] = useState(0);
   const [bestHeightMessage, setBestHeightMessage] = useState(0);
   const [maxWidthMessage, setMaxWidthMessage] = useState(0);
   const [bestWidthMessage, setBestWidthMessage] = useState(0);
-  const { t } = useTranslation();
 
   useEffect(() => {
     if (frameBackgroundRef.current) {
@@ -35,32 +29,7 @@ const WriteMessage: React.FC = () => {
       setMaxWidthMessage(frameBackgroundRef.current.clientWidth - 60);
       setBestWidthMessage(frameBackgroundRef.current.clientWidth - 60);
     }
-  });
-
-  const translateLanguate = async () => {
-    setOldValue(letter.letters);
-
-    const result = await translateLanguage(letter.letters);
-
-    setLetter({
-      ...letter,
-      letters: result,
-    });
-  };
-
-  const resetValueToOld = () => {
-    setLetter({
-      ...letter,
-      letters: oldValue,
-    });
-  };
-
-  const clearMessage = () => {
-    setLetter({
-      ...letter,
-      letters: '',
-    });
-  };
+  }, []);
 
   return (
     <div>
@@ -69,8 +38,10 @@ const WriteMessage: React.FC = () => {
         backgroundURI={common.letterFrameImgURI}
       >
         <div className="flex items-center justify-center">
-          <Draggable disabled={dragable}>
+          <Draggable disabled={letter.dragable}>
             <TextArea
+              ref={textAreaRef}
+              id={'letter-textarea'}
               maxLength={messageMaxLength}
               autoFocus
               value={letter.letters}
@@ -91,36 +62,6 @@ const WriteMessage: React.FC = () => {
           </Draggable>
         </div>
       </FrameBackground>
-      <div className="flex justify-between py-1">
-        <div className="flex items-center">
-          <OrdinaryComponent.Button
-            onClick={() => setDragable(!dragable)}
-            className="mr-2"
-          >
-            {dragable ? t('common.sizeCustom') : t('common.drag')}
-          </OrdinaryComponent.Button>
-          <OrdinaryComponent.Button
-            onClick={translateLanguate}
-            className="mr-2"
-          >
-            {t('common.translate')}
-          </OrdinaryComponent.Button>
-          <OrdinaryComponent.Button onClick={resetValueToOld} className="mr-2">
-            {t('common.back')}
-          </OrdinaryComponent.Button>
-          <OrdinaryComponent.Button onClick={clearMessage} className="mr-2">
-            {t('common.clear')}
-          </OrdinaryComponent.Button>
-        </div>
-        <div className="flex items-center">
-          <div className="mr-2">
-            {letter.letters.length}/{messageMaxLength}
-          </div>
-          <OrdinaryComponent.Button>
-            {t('common.next')}
-          </OrdinaryComponent.Button>
-        </div>
-      </div>
     </div>
   );
 };
@@ -137,7 +78,7 @@ const FrameBackground = styled.div<{ backgroundURI: string }>`
   background-position: center;
   display: flex;
   justify-content: center;
-  margin: 12px;
+  margin: 0 12px 12px 12px;
   max-width: 80%;
   margin-left: auto;
   margin-right: auto;
