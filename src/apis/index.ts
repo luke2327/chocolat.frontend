@@ -21,7 +21,7 @@ const getLetterTemplate = async () => {
   const {
     data: { result },
   } = await axios.post<{ result: LetterTemplateState[] }>(
-    'http://localhost:3000/letter/getLetterTemplate',
+    'https://vcpyu59c8g.execute-api.ap-northeast-1.amazonaws.com/dev/letter/getLetterTemplate',
     {}
   );
 

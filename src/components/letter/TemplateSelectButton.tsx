@@ -22,7 +22,7 @@ const TemplateSelectButton: React.FC<
   return (
     <div className={'flex'}>
       <OrdinaryComponent.Button
-        className={`my-2 mx-auto w-11/12 rounded-r-none border-r-0 px-1 ${
+        className={`my-1 mx-auto w-11/12 rounded-r-none border-r-0 px-1 ${
           isJa ? 'ja-font tracking-tight' : 'ko-font text-xl'
         }`}
         onClick={() => addTemplate(isJa ? props.ja : props.ko)}
@@ -30,7 +30,7 @@ const TemplateSelectButton: React.FC<
         {isJa ? props.ja : props.ko}
       </OrdinaryComponent.Button>
       <OrdinaryComponent.Button
-        className={`my-2 mx-auto w-11/12 rounded-l-none px-1 ${
+        className={`my-1 mx-auto w-11/12 rounded-l-none px-1 ${
           isJa ? 'ko-font text-xl' : 'ja-font tracking-tight'
         }`}
         onClick={() => addTemplate(isJa ? props.ko : props.ja)}
