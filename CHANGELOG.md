@@ -1,3 +1,23 @@
+# [1.4.0](https://github.com/luke2327/chocolat.frontend/compare/v1.3.0...v1.4.0) (2023-03-01)
+
+
+### Bug Fixes
+
+* eslint rules ([9887ea3](https://github.com/luke2327/chocolat.frontend/commit/9887ea377b2738a6b44df0ac7b0ac26ea5396e94))
+* stores names ([d4f18fd](https://github.com/luke2327/chocolat.frontend/commit/d4f18fd2761ec33be97028a95776793c088529e9))
+
+
+### Features
+
+* add Footer menu and set height ([0be0bcb](https://github.com/luke2327/chocolat.frontend/commit/0be0bcb05ad7a085573616c4f276a0dd1992afdf))
+* **add:** constants ([453c4d6](https://github.com/luke2327/chocolat.frontend/commit/453c4d6b682c4e90a4882a4be1254789ffa7fa33))
+* **add:** footer component ([0cd7b3b](https://github.com/luke2327/chocolat.frontend/commit/0cd7b3baa02cf47055f86024cde01a46dfaa21a8))
+* **mod:** api endpoints ([681643a](https://github.com/luke2327/chocolat.frontend/commit/681643a94e35b9921929cca3524e4626ca68f709))
+* **mod:** api endpoints (temp) ([d8adfa3](https://github.com/luke2327/chocolat.frontend/commit/d8adfa37128a54f33c4b55f61ec1f97c147e4286))
+* **mod:** right side panel ([4eb8da5](https://github.com/luke2327/chocolat.frontend/commit/4eb8da586ad7be98440767e215852967985e61f7))
+* **mod:** template select button component ([a66b595](https://github.com/luke2327/chocolat.frontend/commit/a66b595252040a6107b8940063c3bdacaf9f170b))
+* **mod:** write message component ([fe0a9d7](https://github.com/luke2327/chocolat.frontend/commit/fe0a9d7df8fed95e27fe7ff8f45524bb76d87b81))
+
 # [1.3.0](https://github.com/luke2327/chocolat.frontend/compare/v1.2.0...v1.3.0) (2023-02-23)
 
 
